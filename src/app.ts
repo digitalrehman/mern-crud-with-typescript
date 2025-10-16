@@ -1,12 +1,9 @@
 import express from "express";
+import route from "./routes/user.route.ts";
 const app = express();
 
 app.use(express.json());
 
-app.get("/api/user", (req, res) => {
-  res.status(200).json({
-    message: "get all user",
-  });
-});
+app.use("/api", route);
 
 export default app;
