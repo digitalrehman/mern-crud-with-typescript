@@ -1,24 +1,21 @@
+import mongoose, { Schema } from "mongoose";
 import type { IUser } from "../types/user.type.ts";
 
-const users: IUser[] = [
-  {
-    id: "1",
-    email: "ali@gmail.com",
-    name: "ali",
-    password: "ali123",
+let userSchema: Schema<IUser> = new Schema({
+  name: {
+    type: String,
+    required: true,
   },
-  {
-    id: "2",
-    email: "asad@gmail.com",
-    name: "asad",
-    password: "asad123",
+  email: {
+    type: String,
+    required: true,
+    unique: true,
   },
-  {
-    id: "3",
-    email: "bilal@gmail.com",
-    name: "bilal",
-    password: "bilal123",
+  password: {
+    type: String,
+    required: true,
   },
-];
+});
 
-export default users
+let user = mongoose.model<IUser>("crud", userSchema);
+export default user;
