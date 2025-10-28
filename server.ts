@@ -1,7 +1,7 @@
 import app from "./src/app.ts";
 import configuration from "./src/config/config.ts";
 import db_connection from "./src/config/dbconnection.ts";
-const port = configuration.PORT || 3000;
+const port = configuration.PORT || 5000;
 
 db_connection()
 

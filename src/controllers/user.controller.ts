@@ -75,4 +75,6 @@ let getById = async (req: Request, res: Response) => {
     });
   }
 };
+
+
 export { createUser, getAllUser, getById };
