@@ -1,28 +1,28 @@
-import type { IUser } from "../types/types";
+import type { IUser } from "@/types/types";
 import axios from "axios";
 
-export let getUsers = async () => {
-  let response = await axios.get(`${import.meta.env.VITE_BASE_URL}users`);
+export const getUsers = async () => {
+  const response = await axios.get(`${import.meta.env.VITE_BASE_URL}alluser`);
   return response.data;
 };
 
-export let addUser = async (user: IUser) => {
-  let response = await axios.post(
+export const addUser = async (user: IUser) => {
+  const response = await axios.post(
     `${import.meta.env.VITE_BASE_URL}create`,
     user
   );
   return response.data;
 };
 
-export let deleteUser = async (id: string) => {
-  let response = await axios.delete(
+export const deleteUser = async (id: string) => {
+  const response = await axios.delete(
     `${import.meta.env.VITE_BASE_URL}deleteUser/${id}`
   );
   return response.data;
 };
 
-export let updateUser = async (id: string, user: IUser) => {
-  let response = await axios.put(
+export const updateUser = async (id: string, user: IUser) => {
+  const response = await axios.put(
     `${import.meta.env.VITE_BASE_URL}updateUser/${id}`,
     user
   );

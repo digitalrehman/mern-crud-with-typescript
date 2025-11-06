@@ -36,7 +36,7 @@ let createUser = async (req: Request, res: Response) => {
 
 let getAllUser = async (req: Request, res: Response) => {
   try {
-    let all_user = await user.find().skip(2).limit(2);
+    let all_user = await user.find();
     res.status(201).json({
       message: "user find successfully",
       status: true,
